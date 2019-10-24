@@ -1,0 +1,51 @@
+/*https://codersblock.com/blog/creating-glow-effects-with-css/*/
+
+.particle{
+    position: relative;
+    background-color: white;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 100%;
+    z-index: auto;
+
+    animation: 
+        x-oscillate 2s ease-in-out infinite alternate,
+        buoyant-rise 15s linear infinite normal;
+}
+
+#div-generate-particle{
+    position: relative;
+    background-color: #ffFF00;
+    overflow: visible;
+    height: 380px;
+    z-index: 0;
+    margin-top: -380px;
+}
+
+.firefly-glow{
+    box-shadow: 
+        /* in order: x offset, y offset, blur size, spread size, color */
+        /* blur size and spread size are optional (they default to 0) */
+        0 0 15px 12px #ffffff,
+        0 0 25px 15px #ccff66,
+        0 0 35px 25px #ffff66;
+}
+@keyframes buoyant-rise{
+    0%{
+        top: 50%;
+    }
+
+    100%{
+        top: -1500%;
+    }
+}
+@keyframes x-oscillate{
+    0%{
+        left: 45%;
+    }
+    100%{
+        left: 55%;
+    }
+}
